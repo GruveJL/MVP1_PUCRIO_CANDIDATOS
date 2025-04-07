@@ -1,10 +1,6 @@
 <h1 align="center"> MVP1_PUCRIO_CANDIDATOS </h1> 
 <h2 align="center">Repo for MVP of Data Science and Analytics at PUC RIO MBA</h2> 
 
-![Badge Ferramenta](https://img.shields.io/badge/Funcionando:-DataBricksCommunity-red)  
-
-
-![Badge Linguagens](https://img.shields.io/badge/Versão:-SQL/py.spark-blue) 
 
 ## Resumo do Projeto
 Esse projeto tem como função cumprir etapa obrigatória da disciplina de Engenharia de Dados do Curso de MBA em Data Science e Analytics oferecido pela Puc Rio.
@@ -41,16 +37,28 @@ Toda a carga dos dados seria realizada via código, entretanto por serem arquivo
 ### Metodologia
 A seguir levanterai alguns pontos do processo de tratamento e disponibilização dos dados:
 
-Todo projeto foi feito no Databricks Community, os arquivos utilizados estão disponibilizados nesse repo. 
-O arquivo main com todas as etapas e análise e um arquivo de reset, já que o cluster é reiniciado e todas as tabelas são deletadas, entretanto o log guarda o local impossibilitanto a criação das mesmas tabelas, sendo necessário a exclusão dos diretórios.
+Todo projeto foi feito no Databricks Community, os arquivos utilizados estão disponibilizados nesse repo.
+O arquivo [Main](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/3522802840626448/980842473257537/2192005160190208/latest.html) com todas as etapas e análise e um arquivo de reset, já que o cluster é reiniciado e todas as tabelas são deletadas, entretanto o log guarda o local impossibilitanto a criação das mesmas tabelas, sendo necessário a exclusão dos diretórios.
 
+O código intercala uso de py_spark, python e SQL, como o curso oferece suporte ao uso de SQL todas as consultas que pude fiz via o sqlContext, entretanto os comandos de criação de tabelas permanente funcionaram melhor via df do spark.
 
+#### Bronze Layer
 
+#### Silver Layer
+
+#### Gold Layer
+
+#### Análise
 $\frac{3x-1}{2}$
 
 
 ```math
 \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
 ```
+#### Conclusão
+
+### Auto
+
+
 
 
