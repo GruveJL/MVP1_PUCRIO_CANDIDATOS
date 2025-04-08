@@ -10,7 +10,7 @@ Criar um pipeline que envolva a busca, coleta, modelagem, carga e análise dos d
 Nos próximos passos descreverei o projeto e seus passos.
 
 ### Objetivo do projeto:
-A ideia inicial seria um mapeamento do público de candidatos para oferta de uma consultoria de gestão de patrimônio, considerando que candidatos possuem grande patrimônio e pouca disponibilidade de tempo para gestão e planejamento de evolução patrimonial.
+A ideia inicial seria um mapeamento do público de candidatos para oferta de uma consultoria de gestão de patrimônio, considerando supostamente que candidatos possuem grande patrimônio e pouca disponibilidade de tempo para gestão e planejamento de evolução patrimonial.
 
 Como desdobramento do objetivo, analisar a evolução patrimonial dos candidatos recorrentes na eleição de 2022, para isso utilizarei os dados disponibilizados pelo [Portal de Dados Abertos do TSE](https://dadosabertos.tse.jus.br/), pegando dois tipos de arquivos, os arquivos de candidatos e os de bens declarados dos candidatos dos seguintes anos:
 1. 2022 - Presidenciais [Candidatos](https://dadosabertos.tse.jus.br/dataset/candidatos-2022/resource/435145fd-bc9d-446a-ac9d-273f585a0bb9) [Bens](https://dadosabertos.tse.jus.br/dataset/candidatos-2022/resource/fac824ef-8519-4c75-b634-378e6fcc717f)
@@ -19,7 +19,7 @@ Como desdobramento do objetivo, analisar a evolução patrimonial dos candidatos
 
 3. 2018 - Presidenciais [Candidatos](https://dadosabertos.tse.jus.br/dataset/candidatos-2018/resource/d9cb832e-fa52-4b62-8ee3-8d68d5620116) [Bens](https://dadosabertos.tse.jus.br/dataset/candidatos-2018/resource/84475557-764f-4457-9277-92b58fbb5f80)
 
-Esses dados estão sob licença de uso aberto para uso, manipulação de divulgação.
+Esses dados estão sob licença de uso aberto para uso, manipulação e divulgação.
 
 Vale ressaltar que este projeto não possui cunho político ou partidário, apenas a satisfação de um aprofundamento sob dados aplamente divulgados pelos orgãos competentes.
 
@@ -38,17 +38,35 @@ Toda a carga dos dados seria realizada via código, entretanto por serem arquivo
 A seguir levanterai alguns pontos do processo de tratamento e disponibilização dos dados:
 
 Todo projeto foi feito no Databricks Community, os arquivos utilizados estão disponibilizados nesse repo.
-O arquivo [Main](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/3522802840626448/980842473257537/2192005160190208/latest.html) com todas as etapas e análise e um arquivo de reset, já que o cluster é reiniciado e todas as tabelas são deletadas, entretanto o log guarda o local impossibilitanto a criação das mesmas tabelas, sendo necessário a exclusão dos diretórios.
+O arquivo [Main](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/3522802840626448/980842473257537/2192005160190208/latest.html) com todas as etapas e análise e um arquivo de [Reset](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/3522802840626448/3568646841543170/2192005160190208/latest.html), já que o cluster é reiniciado e todas as tabelas são deletadas, entretanto o log guarda o local impossibilitanto a criação das mesmas tabelas, sendo necessário a exclusão dos diretórios.
 
 O código intercala uso de py_spark, python e SQL, como o curso oferece suporte ao uso de SQL todas as consultas que pude fiz via o sqlContext, entretanto os comandos de criação de tabelas permanente funcionaram melhor via df do spark.
 
 #### Bronze Layer
+Como dito, os dados foram coletados manualmente e feito upload dos .csv's; a partir do .csv ingestados apenas fiz validações simples sobre os arquivos existirem no devido diretório e um loop para criar pastas distintas para cada tipo de arquivo e para inserí-los no hive da maneira que estão criando as respectivas tabelas em bronze layer.
 
 #### Silver Layer
+Aqui foi feito todo a compreensão, tratamento e ajuste que os dados necessitavam para a disponibilização.
+
+Os tratamentos se deram em suma pela conversão dos tipos dos campos, já que pelo upload, todas as colunas dos .csv's ao serem lidos vieram em formato string.
+
+Um pequeno tratamento com relação a alguns dados corrompidos no csv de 2022.
+
+Entratas dos .csv's sem a informação dos campos que seriam usados como chaves de relacionamento, nesses casos optei por retirar as entradas, já que não havia tratamento a ser feito.
+
+Houve um problema tratado com relação a coluna "SQ_CANDIDATO" usada como chave primária. Esse campo é único por candidato e por ano de eleição, implicando em, candidatos que disputaram o 2º turno possuem na base duas entradas com o mesmo código, como solução realizei um _join_  filtrando entradas que não tiveram um turno maior, assim os 1º's turnos daqueles que não disputaram essa etapa e os 2º's daqueles que disputaram.
 
 #### Gold Layer
+Idealizei as tabelas finais em esquema Star(Estrela) no qual as tabelas teriam as informações necessárias dentro de uma única tabela fato e métricas disponibilizadas para essas métricas.
+Como a análise consiste em comparação de fatos em períodos diferentes, disponibilizar uma tabela com colunas necessárias _pivotadas_ por anos tira a necessidade dos _joins_ na análise final.
+
+Ao final foram disponibilizadas 4 tabelas nessa camada, sendo que uma delas (tabela de patrimonio) já a totalização dos dados necessários para responder as perguntas levantas.
 
 #### Análise
+
+
+
+
 $\frac{3x-1}{2}$
 
 
