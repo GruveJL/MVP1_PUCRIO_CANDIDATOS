@@ -63,20 +63,33 @@ Como a análise consiste em comparação de fatos em períodos diferentes, dispo
 Ao final foram disponibilizadas 4 tabelas nessa camada, sendo que uma delas (tabela de patrimonio) já a totalização dos dados necessários para responder as perguntas levantas.
 
 #### Análise
-
-
-
-
-$\frac{3x-1}{2}$
+A análise foi pautada numa única métrica, a variação de patrimonio entre dois anos analisados, dado pela formula de variação em percentuais: 
 
 
 ```math
-\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+$\frac{valor_recente}{valor_antigo} - 1$
 ```
-#### Conclusão
 
-### Auto
+Aplicando essa fórmula a diversas quebras como raça declarada, situação final da eleição anterior, idade e etc. Pude mapear bem quais características discriminam os candidatos com maior variação de patrimônio seja negativa ou positiva.
 
+Alguns gráficos foram gerados para facilitar a compreensão dos dados, sujiro entras no notebook via link publicado para melhor visualização.
+
+
+### Auto Avaliação
+Acredito que quando iniciamos um projeto dessa magnitude temos intenções mirabolantes, claro sem levar em consideração os percaussos a serem encontrados pelo caminho.
+
+Apesar de trabalhar com consumo de informações e tabelas em nuvem, nunca tinha realizado o processo de ETL. Uso no meu cotidiano a linguagem SQL por isso e pelo suporte do curso tentei usar ao máximo a linguagem dentro do código, entretanto algumas ações ficaram muito mais práticas e eficientes em spark/python dada algumas limitações da linguagem.
+
+Gastei um tempo precioso tentando otimizar o descompactamento dos arquivos via própria ferramenta Databricks Community sem sucesso, após tentei integrar com algum serviço da amazon para realizar o download, descompactação e ingestão "automática", também sem sucesso. No fim optei por fazer o upload manual, arcaico porém funcional.
+
+Como comentado no documento de código, os dados são relativamente bem dispostos, necessitando pouco tratamento, o que foi feito foi a compreensão de sua disponibilização e como deixar os dados o melhor possível para seu consumo nas camadas finais, respeitando o máximo possível boas práticas de Engenharia e os requisitos do projeto.
+
+Confesso que senti falta de uma documentação apropriada para planejamento deste processo de criação de um banco de dados em uma plataforma **na Nuvem** end-to-end, isso aumentou muito a curva de aprendizado e a resolução de problemas encontrados com soluções que julguei as mais corretas, mas sem muito fundamento para as mesmas, apenas pautado pelo que tenho de experiência trabalhando na área de dados e o que entendi por ser mais útil para disponibilizar as tabelas de consumo finais.
+
+Ademais agradeço a oportunidade e a proposta do projeto, tenho alguns anos de experiência na área de dados e poucas vezes fui confrontados com os questionamentos de como e por que fazer certas escolhas no processo de criação de um bando de dados
+
+# Autores
+| [<img src="https://avatars.githubusercontent.com/u/131409712?v=4"  width=115><br><sub>GruveJL</sub>](https://github.com/GruveJL)
 
 
 
