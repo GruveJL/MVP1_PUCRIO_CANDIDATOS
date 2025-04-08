@@ -89,7 +89,7 @@ Confesso que senti falta de uma documentação apropriada para planejamento dest
 Ademais agradeço a oportunidade e a proposta do projeto, tenho alguns anos de experiência na área de dados e poucas vezes fui confrontados com os questionamentos de como e por que fazer certas escolhas no processo de criação de um bando de dados
 
 # Autores
-| [<img src="https://avatars.githubusercontent.com/u/131409712?v=4"  width=115><br><sub>GruveJL</sub>](https://github.com/GruveJL)
+| [<img src="https://avatars.githubusercontent.com/u/131409712?v=4"  width=115><br><sub>Juan Lima</sub>](https://github.com/GruveJL)
 
 
 
