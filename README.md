@@ -73,7 +73,7 @@ A análise foi pautada numa única métrica, a variação de patrimonio entre do
 \frac{(valor \quad recente)}{(valor \quad antigo)} - 1
 ```
 
-Aplicando essa fórmula a diversas quebras como raça declarada, situação final da eleição anterior, idade e etc. pude mapear bem quais características discriminam os candidatos com maior variação de patrimônio seja negativa ou positiva.
+Aplicando essa fórmula a diversas quebras como idade, situação final da eleição anterior, cargo disputado etc., pude mapear bem quais características discriminam os candidatos com maior variação de patrimônio seja negativa ou positiva.
 
 Alguns gráficos foram gerados para facilitar a compreensão dos dados, sujiro entrar no notebook via link publicado para melhor visualização.
 
