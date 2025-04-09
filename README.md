@@ -86,7 +86,9 @@ Como comentado no documento de código, os dados são relativamente bem disposto
 
 Confesso que senti falta de uma documentação apropriada para planejamento deste processo de criação de um banco de dados em uma plataforma **na Nuvem** end-to-end, isso aumentou muito a curva de aprendizado e a resolução de problemas encontrados com soluções que julguei as mais corretas, mas sem muito fundamento para as mesmas, apenas pautado pelo que tenho de experiência trabalhando na área de dados e o que entendi por ser mais útil para disponibilizar as tabelas de consumo finais.
 
-Ademais agradeço a oportunidade e a proposta do projeto, tenho alguns anos de experiência na área de dados e poucas vezes fui confrontados com os questionamentos de como e por que fazer certas escolhas no processo de criação de um bando de dados
+O resultado foi básico porém gratificante, dado o esforço e o fato de alimentar a minha curiosidade a respeito da evolução patrimonial dos candidatos, mesmo com uma base amostral final extremamente pequena com relação a quantidade de candidatos disponíveis. Para a proposta de uma empresa de consultoria patrimonial ficou bem claro que a escolha (dada a análise) confirma alguns viéses, candidatos eleitos por quosciente partidário tiveram maiores aumentos, suplentes e deputados federais tiveram maiores aumentos, homens tiveram maiores aumentos e por fim mesmo com poucas amostras os candidatos mais novos tiveram maiores aumentos. Claro que aqui caberiam uma validação comparativa com a média populacional possivelmente com dados do IBGE, mas podemos ter uma idéia do público do qual poderíamos vender uma consultoria. 
+
+Ademais agradeço a oportunidade e a proposta do projeto, tenho alguns anos de experiência na área de dados e poucas vezes fui confrontados com os questionamentos de como e por que fazer certas escolhas no processo de criação de um bando de dados.
 
 # Autores
 | [<img src="https://avatars.githubusercontent.com/u/131409712?v=4"  width=115><br><sub>Juan Lima</sub>](https://github.com/GruveJL)
