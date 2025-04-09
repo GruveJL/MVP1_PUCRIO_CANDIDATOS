@@ -25,7 +25,7 @@ Vale ressaltar que este projeto não possui cunho político ou partidário, apen
 
 
 
-### Proposta Inicial
+## Proposta Inicial
 A Proposta inicial era avaliar todos os períodos eleitorais, construir bases por candidatos, os anos em que concorreram e todo o descritivo de informações, entretanto por questões de prazo para entrega do projeto, optei por focar nas eleições de 2022 e analisar os candidatos recorrentes nas duas eleições anteriores.<br>
 
 A escolha de 2022 não foi por acaso, a princípio seriam as eleições ocorridas em 2024, entretanto no mesmo ano uma normativa fez com que os CPF's dos candidatos fossem tratados como informações não divulgável, o que dificultaria e muito as relações a serem feitas entre os anos de eleição. No projeto dou uma sujestão para contornar esse problema (usando nome, data de nascimento e UF de nascimento), entretanto a garantia de uma equivalencia fica fraca e sem uma forma plausível de validação.<br>
@@ -34,7 +34,7 @@ Tinha o intuito de construir um Data Dash em Power BI, entretanto até o present
 
 Toda a carga dos dados seria realizada via código, entretanto por serem arquivos razoavelmente pesados o download + descompactação + transferencias dos mesmos para as pastas, demandou um pouco de mais do processamento disponível do Databricks, optei por manualmente fazer upload dos arquivos .csv já descompactados.
 
-### Metodologia
+## Metodologia
 A seguir levanterai alguns pontos do processo de tratamento e disponibilização dos dados:
 
 Todo projeto foi feito no Databricks Community, os arquivos utilizados estão disponibilizados nesse repo.
@@ -42,10 +42,10 @@ O arquivo [Main](https://databricks-prod-cloudfront.cloud.databricks.com/public/
 
 O código intercala uso de py_spark, python e SQL, como o curso oferece suporte ao uso de SQL todas as consultas que pude fiz via o sqlContext, entretanto os comandos de criação de tabelas permanente funcionaram melhor via df do spark.
 
-#### Bronze Layer
+### Bronze Layer
 Como dito, os dados foram coletados manualmente e feito upload dos .csv's; a partir do .csv ingestados apenas fiz validações simples sobre os arquivos existirem no devido diretório e um loop para criar pastas distintas para cada tipo de arquivo e para inserí-los no hive da maneira que estão, criando as respectivas tabelas em bronze layer.
 
-#### Silver Layer
+### Silver Layer
 Aqui foi feito todo a compreensão, tratamento e ajuste que os dados necessitavam para a disponibilização.
 
 Os tratamentos se deram em suma pela conversão dos tipos dos campos, já que pelo upload, todas as colunas dos .csv's ao serem lidos vieram em formato string.
@@ -56,13 +56,13 @@ Entradas dos .csv's sem a informação dos campos que seriam usados como chaves 
 
 Houve um problema tratado com relação a coluna "SQ_CANDIDATO" usada como chave primária. Esse campo é único por candidato e por ano de eleição, implicando em candidatos que disputaram o 2º turno possuem na base duas entradas com o mesmo código, como solução realizei um _join_  filtrando entradas que não tiveram um turno maior, assim os 1º's turnos daqueles que não disputaram essa etapa e os 2º's daqueles que disputaram.
 
-#### Gold Layer
+### Gold Layer
 Idealizei as tabelas finais em esquema Star(Estrela) no qual as tabelas teriam as informações necessárias dentro de uma única tabela fato e métricas disponibilizadas para essas métricas.
 Como a análise consiste em comparação de fatos em períodos diferentes, disponibilizar uma tabela com colunas necessárias _pivotadas_ por anos tira a necessidade dos _joins_ na análise final.
 
 Ao final foram disponibilizadas 4 tabelas nessa camada, sendo que uma delas (tabela de patrimonio) já com a totalização dos dados necessários para responder as perguntas levantas.
 
-#### Análise
+### Análise
 A análise foi pautada numa única métrica, a variação de patrimonio entre dois anos analisados, dado pela fórmula de variação em percentuais: 
 
 
