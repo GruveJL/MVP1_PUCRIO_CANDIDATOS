@@ -43,6 +43,7 @@ O arquivo [Main](https://databricks-prod-cloudfront.cloud.databricks.com/public/
 O código intercala uso de py_spark, python e SQL, como o curso oferece suporte ao uso de SQL todas as consultas que pude fiz via o sqlContext, entretanto os comandos de criação de tabelas permanente funcionaram melhor via df do spark.
 
 ### Bronze Layer
+<img title="bronze"  src="/images/boo.svg">
 Como dito, os dados foram coletados manualmente e feito upload dos .csv's; a partir do .csv ingestados apenas fiz validações simples sobre os arquivos existirem no devido diretório e um loop para criar pastas distintas para cada tipo de arquivo e para inserí-los no hive da maneira que estão, criando as respectivas tabelas em bronze layer.
 
 ### Silver Layer
