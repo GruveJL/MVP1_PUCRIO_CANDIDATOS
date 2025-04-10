@@ -65,7 +65,7 @@ Como a análise consiste em comparação de fatos em períodos diferentes, dispo
 
 Ao final foram disponibilizadas 4 tabelas nessa camada, sendo que uma delas (tabela de patrimonio) já com a totalização dos dados necessários para responder as perguntas levantas.
 
-O [Catálogo](https://github.com/GruveJL/MVP1_PUCRIO_CANDIDATOS/blob/d48885f01c6e9a535eb2120939d7f90c9ac9108a/Data%20Catalog.pdf) dos dados fiz em um excel mesmo e diponibilizei no repo em .xlsx e .pdf como no link.
+O [Catálogo](https://github.com/GruveJL/MVP1_PUCRIO_CANDIDATOS/blob/d48885f01c6e9a535eb2120939d7f90c9ac9108a/Data%20Catalog.pdf) dos dados fiz em um excel e diponibilizei no repo em .xlsx e .pdf como no link.
 
 ### Análise
 A análise foi pautada numa única métrica, a variação de patrimonio entre dois anos analisados, dado pela fórmula de variação em percentuais: 
