@@ -12,7 +12,7 @@ Nos próximos passos descreverei o projeto e seus passos.
 ### Objetivo do projeto:
 A ideia inicial seria um mapeamento do público de candidatos para oferta de uma consultoria de gestão de patrimônio, considerando supostamente que candidatos possuem grande patrimônio e pouca disponibilidade de tempo para gestão e planejamento de evolução patrimonial.
 
-Como desdobramento do objetivo, analisar a evolução patrimonial dos candidatos recorrentes na eleição de 2022, para isso utilizarei os dados disponibilizados pelo [Portal de Dados Abertos do TSE](https://dadosabertos.tse.jus.br/), pegando dois tipos de arquivos, os arquivos de candidatos e os de bens declarados dos candidatos dos seguintes anos:
+Como desdobramento do objetivo, analisar a evolução patrimonial dos candidatos recorrentes na eleição de 2022, para isso utilizarei os dados disponibilizados pelo [Portal de Dados Abertos do TSE](https://dadosabertos.tse.jus.br/), pegando dois tipos de arquivos, os arquivos de candidatos e o de bens declarados dos candidatos dos seguintes anos:
 1. 2022 - Presidenciais [Candidatos](https://dadosabertos.tse.jus.br/dataset/candidatos-2022/resource/435145fd-bc9d-446a-ac9d-273f585a0bb9) [Bens](https://dadosabertos.tse.jus.br/dataset/candidatos-2022/resource/fac824ef-8519-4c75-b634-378e6fcc717f)
 
 2. 2020 - Municipais [Candidatos](https://dadosabertos.tse.jus.br/dataset/candidatos-2020-subtemas/resource/8187b1aa-5026-4908-a15a-0bf777ee6701) [Bens](https://dadosabertos.tse.jus.br/dataset/candidatos-2020-subtemas/resource/4b5e016e-feed-4ff6-bf86-78217927709a)
@@ -21,8 +21,9 @@ Como desdobramento do objetivo, analisar a evolução patrimonial dos candidatos
 
 Esses dados estão sob licença de uso aberto para uso, manipulação e divulgação.
 
-Vale ressaltar que este projeto não possui cunho político ou partidário, apenas a satisfação de um aprofundamento sob dados aplamente divulgados pelos orgãos competentes.
+Cada tipo de arquivo utilizado arquivo possui um .pdf explicativo dos dados, uma espécie de catálogo, que disponibilizei também nesse repo: [Candidatos](https://github.com/GruveJL/MVP1_PUCRIO_CANDIDATOS/blob/7db9a33792f7c2f1e07bcc4e06a270751641c3dc/Doc_candidatos.pdf)    [Bens](https://github.com/GruveJL/MVP1_PUCRIO_CANDIDATOS/blob/7db9a33792f7c2f1e07bcc4e06a270751641c3dc/Doc_bens_candidatos.pdf)
 
+Vale ressaltar que este projeto não possui cunho político ou partidário, apenas a satisfação de um aprofundamento sob dados aplamente divulgados pelos orgãos competentes.
 
 
 ## Proposta Inicial
